@@ -1,15 +1,6 @@
 package com.alibaba.excel.context;
 
-import com.alibaba.excel.event.WriteHandler;
-import com.alibaba.excel.metadata.BaseRowModel;
-import com.alibaba.excel.metadata.ExcelHeadProperty;
-import com.alibaba.excel.metadata.Table;
-import com.alibaba.excel.support.ExcelTypeEnum;
-import com.alibaba.excel.util.CollectionUtils;
-import com.alibaba.excel.util.StyleUtil;
-import com.alibaba.excel.util.WorkBookUtil;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellRangeAddress;
+import static com.alibaba.excel.util.StyleUtil.buildSheetStyle;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +9,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.alibaba.excel.util.StyleUtil.buildSheetStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.util.CellRangeAddress;
+
+import com.alibaba.excel.event.WriteHandler;
+import com.alibaba.excel.metadata.BaseRowModel;
+import com.alibaba.excel.metadata.ExcelHeadProperty;
+import com.alibaba.excel.metadata.Table;
+import com.alibaba.excel.support.ExcelTypeEnum;
+import com.alibaba.excel.util.CollectionUtils;
+import com.alibaba.excel.util.StyleUtil;
+import com.alibaba.excel.util.WorkBookUtil;
 
 /**
  * A context is the main anchorage point of a excel writer.
@@ -131,6 +136,12 @@ public class WriteContext {
 
         /** **/
         initExcelHeadProperty(sheet.getHead(), sheet.getClazz());
+        
+        //冻结标题行
+        if (sheet.getFreezePane() != null) {
+        	int[] freezePane = sheet.getFreezePane();
+        	currentSheet.createFreezePane(freezePane[0], freezePane[1]);
+		}
 
         initTableStyle(sheet.getTableStyle());
 
@@ -147,6 +158,9 @@ public class WriteContext {
         this.currentTable = null;
 
     }
+    
+    
+    
 
     /**
      * init excel header

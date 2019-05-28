@@ -20,11 +20,12 @@ public class WriteTest {
 
     @Test
     public void writeV2007() throws IOException {
-        OutputStream out = new FileOutputStream("/Users/jipengfei/2007.xlsx");
+        OutputStream out = new FileOutputStream("C:/Users/voc2048/Desktop/新报表系统/baoku_2007_"+System.currentTimeMillis()+".xlsx");
         ExcelWriter writer = EasyExcelFactory.getWriter(out);
         //写第一个sheet, sheet1  数据全是List<String> 无模型映射关系
         Sheet sheet1 = new Sheet(1, 3);
         sheet1.setSheetName("第一个sheet");
+        sheet1.createFreezePane(0, 3);//冻结标题行
 
         //设置列宽 设置每列的宽度
         Map columnWidth = new HashMap();

@@ -50,8 +50,13 @@ public class Sheet {
      *
      */
     private int startRow = 0;
-
-
+    
+    /**
+     * 冻结窗格
+     */
+    private int[] freezePane;
+    
+    
     public Sheet(int sheetNo) {
         this.sheetNo = sheetNo;
     }
@@ -165,4 +170,15 @@ public class Sheet {
     public void setStartRow(int startRow) {
         this.startRow = startRow;
     }
+
+	public int[] getFreezePane() {
+		return freezePane;
+	}
+	
+    /**
+     * 冻结窗格
+     */
+	public void createFreezePane(int colSplit, int rowSplit){
+		this.freezePane = new int[]{colSplit, rowSplit};
+	}
 }
