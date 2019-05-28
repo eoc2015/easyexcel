@@ -2,34 +2,34 @@
 <metadata modelVersion="1.1.0">
   <groupId>com.alibaba</groupId>
   <artifactId>easyexcel</artifactId>
-  <version>1.1.2-beta5-SNAPSHOT</version>
+  <version>1.1.2-baoku-SNAPSHOT</version>
   <versioning>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
-    <lastUpdated>20190528052620</lastUpdated>
+    <lastUpdated>20190528061003</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.1.2-beta5-SNAPSHOT</value>
-        <updated>20190528052620</updated>
+        <value>1.1.2-baoku-SNAPSHOT</value>
+        <updated>20190528061003</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.1.2-beta5-SNAPSHOT</value>
-        <updated>20190528052620</updated>
+        <value>1.1.2-baoku-SNAPSHOT</value>
+        <updated>20190528061003</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.1.2-beta5-SNAPSHOT</value>
-        <updated>20190528052620</updated>
+        <value>1.1.2-baoku-SNAPSHOT</value>
+        <updated>20190528061003</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.1.2-beta5-SNAPSHOT</value>
-        <updated>20190528052620</updated>
+        <value>1.1.2-baoku-SNAPSHOT</value>
+        <updated>20190528061003</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
